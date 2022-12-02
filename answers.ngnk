@@ -14,14 +14,14 @@ kt:`lose`draw`win!("rps"!"srp"
                    "rps"!"psr")
 them:("ABC"!"rps")@*input
 movept:"rps"!1 2 3
-scorer:{+/movept[y]+(3*x=y)+6*y=(kt`win)x}
+score:{+/movept[y]+(3*x=y)+6*y=(kt`win)x}
 
 / part 1
 us:("XYZ"!"rps")@*|input
-scorer[them;us]
+score[them;us]
 
 / part 2
 result:("XYZ"!`lose`draw`win)@*|input
-scorer[them;kt[result]@'them]
+score[them;kt[result]@'them]
 
 \\
