@@ -2,3 +2,27 @@
 x@:>x:+/'0^(&^x)_x:0N,`I$0:"1.txt"
 *x
 +/3#x
+
+
+/ Day 2
+input:"\n"\"A Y\nB X\nC Z"
+input:0:"2.txt"
+input:+`$" "\'input
+
+kt:`lose`draw`win!(`r`p`s!`s`r`p
+                   `r`p`s!`r`p`s
+                   `r`p`s!`p`s`r)
+them:(`A`B`C!`r`p`s)@*input
+scorer:{movept:`r`p`s!1 2 3
+        winmove:kt`win
+        +/movept[y]+(3*x=y)+6*y=winmove x}
+
+/ part 1
+us:(`X`Y`Z!`r`p`s)@*|input
+scorer[them;us]
+
+/ part 2
+result:(`X`Y`Z!`lose`draw`win)@*|input
+scorer[them;(kt result)@'them]
+
+\\
