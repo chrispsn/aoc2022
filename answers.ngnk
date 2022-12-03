@@ -23,4 +23,12 @@ score[them;us]
 result:("XYZ"!`lose`draw`win)@*|input
 score[them;(kt result)@'them]
 
+
+/ Day 3
+input:0:"3.txt"
+ixn:{x^x^y}
+score:{(26*~x=_x)+(_x)-"`"}
++/score@*'ixn/'2 0N#/:input
++/score@*'ixn/'0N 3#input
+
 \\
