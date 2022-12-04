@@ -31,4 +31,12 @@ score:{(26*~x=_x)+(_x)-"`"}
 +/score@*'ixn/'2 0N#/:input
 +/score@*'ixn/'0N 3#input
 
+
+/ Day 4
+input:"\n"\"2-4,6-8\n2-3,4-5\n5-7,7-9\n2-8,3-7\n6-6,4-6\n2-6,4-8"
+input:0:"4.txt"
+(LL;LR;RL;RR):+,/'{x@<x}'`I$"-"\''","\'input
++/(~LR<RR)|LL=RL
++/~LR<RL
+
 \\
