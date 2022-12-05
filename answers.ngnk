@@ -39,4 +39,20 @@ input:0:"4.txt"
 +/(~LR<RR)|LL=RL
 +/~LR<RL
 
+
+/ Day 5
+input:0:"5.txt"
+cutidx:input?,""
+(rawstack;rawmoves):(-1_;1_)@'(0,cutidx)_input
+colcount:1+-4!#*rawstack
+start:|'(^:)_'(+rawstack)1+4*!colcount
+moves:+-1 1 1*0 -1 -1+`I$(+" "\'rawmoves)1 3 5
+next:{[f;x;y]
+      (count;from;to):y
+      x[to],:f count#x from
+      x[from]:count_x[from]
+      x}
+(*|:)'start next[|:]/moves
+(*|:)'start next[::]/moves
+
 \\
