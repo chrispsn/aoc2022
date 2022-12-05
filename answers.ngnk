@@ -48,7 +48,7 @@ moves:+-1 1 1*0 -1 -1+`I$(+" "\'rawmoves)1 3 5
 next:{[f;x;y]
       (count;from;to):y
       x[to],:f count#x from
-      x[from]:count_x[from]
+      x[from]:count_x from
       x}
 :/'start next[|:]/moves
 :/'start next[::]/moves
