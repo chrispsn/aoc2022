@@ -5,6 +5,7 @@ x@:>x:+/'0^(&^x)_x:0N,`I$0:"1.txt"
 
 
 / Day 2
+/ Golfed: https://www.reddit.com/r/adventofcode/comments/zac2v2/2022_day_2_solutions/iylx0d3/
 input:"\n"\"A Y\nB X\nC Z"
 input:0:"2.txt"
 input:+input
