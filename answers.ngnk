@@ -51,7 +51,7 @@ next:{[f;x;count;from;to]
       x[to],:f count#x from
       x[from]:count_x from
       x}
-:/'next[|:]/[start].moves
-:/'next[::]/[start].moves
+:/'(start next[|:]/).moves
+:/'(start next[::]/).moves
 
 \\
