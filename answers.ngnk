@@ -46,13 +46,12 @@ input:0:"4.txt"
 input:0:"5.txt"
 (rawstart;NA;rawmoves):(0,0 1+*input?,"")_input
 start:(^:)_'(^*:')_+|rawstart
-moves:+-1 1 1*0 -1 -1+`I$(+" "\'rawmoves)1 3 5
-next:{[f;x;y]
-      (count;from;to):y
+moves:-1 1 1*0 -1 -1+`I$(+" "\'rawmoves)1 3 5
+next:{[f;x;count;from;to]
       x[to],:f count#x from
       x[from]:count_x from
       x}
-:/'start next[|:]/moves
-:/'start next[::]/moves
+:/'next[|:]/[start].moves
+:/'next[::]/[start].moves
 
 \\
