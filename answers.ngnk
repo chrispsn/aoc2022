@@ -41,6 +41,7 @@ input:0:"4.txt"
 
 
 / Day 5
+/ Variant: https://www.reddit.com/r/adventofcode/comments/zcxid5/2022_day_5_solutions/iyzlwnx/
 input:0:"5.txt"
 (rawstart;NA;rawmoves):(0,0 1+*input?,"")_input
 start:(^:)_'(^*:')_+|rawstart
