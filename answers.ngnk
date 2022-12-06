@@ -54,4 +54,11 @@ next:{[f;x;count;from;to]
 :/'(start next[|:]/).moves
 :/'(start next[::]/).moves
 
+
+/ Day 6
+input:*0:"6.txt"
+f:{x+*&x=#'?'x':y}
+f[4]input
+f[14]input
+
 \\
