@@ -56,7 +56,7 @@ next:{[f;x;count;from;to]
 
 
 / Day 6
-input:*0:"6.txt"
+input:1:"6.txt"
 f:{x+*&x=#'?'x':y}
 f[4]input
 f[14]input
