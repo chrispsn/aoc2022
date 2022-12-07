@@ -61,4 +61,27 @@ f:{x+(#'x?:':y)?x}
 f[4]input
 f[14]input
 
+
+/ Day 7
+/ there are much nicer stack-based solns than this, eg:
+/ https://codeberg.org/ngn/k/src/branch/master/aoc/22/07.k
+/ https://github.com/shadowninja55/advent-of-code/blob/main/2022/07/7.k
+/ https://www.reddit.com/r/adventofcode/comments/zesk40/2022_day_7_solutions/iz8fww6/ (python)
+input:0:"7.txt"
+f:{$["$ cd .."~y; -1_x
+     "$ cd"~4#y; x,`$*|" "\y
+     x]}
+nodeidxs:&~"$"=*'input
+(paths;sizes):(f\input; 0^`I$*'" "\'input)@\:nodeidxs
+depths:|=#'paths
+f:{(+/'(.x)@=-1_'!x)++/'z@=y}
+seed:(,,`)!,0
+dirsizes:{x,y}/f\[seed].+.(paths;sizes)@\:depths
+
++/(100000<)_dirsizes
+
+spacereqd:30000000-70000000-*|dirsizes
+&/(spacereqd>)_dirsizes
+
+
 \\
