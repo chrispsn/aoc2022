@@ -67,12 +67,12 @@ f[14]input
 / https://codeberg.org/ngn/k/src/branch/master/aoc/22/07.k
 / https://github.com/shadowninja55/advent-of-code/blob/main/2022/07/7.k
 / https://www.reddit.com/r/adventofcode/comments/zesk40/2022_day_7_solutions/iz8fww6/ (python)
+/ no "cd /" aside from at the start, so skipped that case
 input:0:"7.txt"
-f:{$["$ cd .."~y; -1_x
-     "$ cd"~4#y; x,`$*|" "\y
-     x]}
-nodeidxs:&~"$"=*'input
-(paths;sizes):(f\input; 0^`I$*'" "\'input)@\:nodeidxs
+crawl:{$["$ cd .."~y; -1_x
+         "$ cd"~4#y; x,`$*|" "\y
+         x]}
+(paths;sizes):(crawl\input; 0^`I$*'" "\'input)
 depths:|=#'paths
 f:{(+/'(.x)@=-1_'!x)++/'z@=y}
 seed:(,,`)!,0
