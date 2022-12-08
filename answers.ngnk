@@ -90,6 +90,10 @@ input:0:"8.txt"
 
 +//|/(4-!4)(+|:)/'({1&/(*x)>1_x}''|'',\')'(+|:)\input
 
+/ ideas for later:
+/ convert to single-coords or heights earlier?
+/ rather than getting rows and cols each time,
+/ do a simpler function four times (do the (+|:)\ rotate and (4-!4)(+|:)/' rotate back)?
 coords:+!2##input
 f:{row:((*x)=*+:)#coords
    (rowl;rowr):((0,row?x)_row)^\:,x
