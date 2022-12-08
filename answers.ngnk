@@ -72,7 +72,7 @@ input:0:"7.txt"
 crawl:{$["$ cd .."~y; -1_x
          "$ cd"~4#y; x,`$*|" "\y
          x]}
-(paths;sizes):(crawl\input; 0^`I$*'" "\'input)
+(paths;sizes):(()crawl\input; 0^`I$*'" "\'input)
 depths:|=#'paths
 f:{(+/'(.x)@=-1_'!x)++/'z@=y}
 seed:(,,`)!,0
