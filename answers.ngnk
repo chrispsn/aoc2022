@@ -91,7 +91,7 @@ input:0:"8.txt"
 r:(+|:)\          / rotate
 rr:(4-!4)(+|:)/'  / reverse rotates
 +//|/rr@({1&/(*x)>1_x}''|'',\')'r input
-|//*/rr@{1+(-2+#x)^((*x)>+1_x)?\:0}''(!#input)_\:/:r input
+|//*/rr@{1+(-2+#x)^((*x)>+1_x)?'0}''(!#input)_\:/:r input
 
 
 \\
