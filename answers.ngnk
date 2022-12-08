@@ -84,4 +84,20 @@ spacereqd:30000000-70000000-*|dirsizes
 &/(spacereqd>)_dirsizes
 
 
+/ Day 8 - rough
+input:0:"8.txt"
+/ input:"\n"\"30373\n25512\n65332\n33549\n35390"
+
++//|/(4-!4)(+|:)/'({1&/(*x)>1_x}''|'',\')'(+|:)\input
+
+coords:+!2##input
+f:{row:((*x)=*+:)#coords
+   (rowl;rowr):((0,row?x)_row)^\:,x
+   col:((*|x)=*|+:)#coords
+   (coll;colr):((0,col?x)_col)^\:,x
+   x:(input . x)>input./:/:(|coll;|rowl;rowr;colr)
+   */1+(-1+#'x)^'*'&'~x}
+|/,/f'coords
+
+
 \\
