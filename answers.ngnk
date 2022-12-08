@@ -95,8 +95,8 @@ f:{row:((*x)=*+:)#coords
    (rowl;rowr):((0,row?x)_row)^\:,x
    col:((*|x)=*|+:)#coords
    (coll;colr):((0,col?x)_col)^\:,x
-   x:(input . x)>input./:/:(|coll;|rowl;rowr;colr)
-   */1+(-1+#'x)^'*'&'~x}
+   x:(input. x)>,/'input./:/:(|coll;|rowl;rowr;colr)  / TODO  investigate why ,/' needed
+   */1+(-1+#'x)^'x?\:0}
 |/,/f'coords
 
 
