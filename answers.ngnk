@@ -88,20 +88,10 @@ spacereqd:30000000-70000000-*|dirsizes
 input:0:"8.txt"
 / input:"\n"\"30373\n25512\n65332\n33549\n35390"
 
-+//|/(4-!4)(+|:)/'({1&/(*x)>1_x}''|'',\')'(+|:)\input
-
-/ ideas for later:
-/ convert to single-coords or heights earlier?
-/ rather than getting rows and cols each time,
-/ do a simpler function four times (do the (+|:)\ rotate and (4-!4)(+|:)/' rotate back)?
-coords:+!2##input
-f:{row:((*x)=*+:)#coords
-   (rowl;rowr):((0,row?x)_row)^\:,x
-   col:((*|x)=*|+:)#coords
-   (coll;colr):((0,col?x)_col)^\:,x
-   x:(input. x)>,/'input./:/:(|coll;|rowl;rowr;colr)  / TODO  investigate why ,/' needed
-   */1+(-1+#'x)^'x?\:0}
-|/,/f'coords
+r:(+|:)\          / rotate
+rr:(4-!4)(+|:)/'  / reverse rotates
++//|/rr@({1&/(*x)>1_x}''|'',\')'r input
+|//*/rr@{1+(-2+#x)^((*x)>+1_x)?\:0}''(!#input)_\:/:r input
 
 
 \\
