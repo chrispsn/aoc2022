@@ -114,9 +114,9 @@ x:names!statements
 x:{$[1=#x;x;(`"("),x,`")"]}'`$" "\'x
 
 / Map nums, operations and brackets to themselves
-nums:$(^:)_`I$'statements
-syms:$"()+-*/="
-x,:!/2#,`$nums,syms
+nums:(^:)_`I$'statements
+syms:"()+-*/="
+x,:!/2#,`$$nums,syms
 
 / Replace defns until stops changing
 a:(,/'x@)/x
