@@ -98,4 +98,50 @@ rr:(4-!4)r/'  / reverse rotates
 |//*/rr@{1+(-2+#x)^((*x)>+x)?'0}''(!#input)_\:/:r\input
 
 
+/ Day 21
+
+input:0:"21.txt"
+
+/ Part 1
+
+/ Build a dict of names to statements
+x:input?'":"
+names:`$x#'input
+statement:(2+x)_'input
+x:names!statement
+
+/ Wrap compound statements in brackets
+x:{$[1=#x;x;(`"("),x,`")"]}'`$" "\'x
+
+/ Map nums, operations and brackets to themselves
+nums:$(^:)_`I$'statement
+syms:$"()+-*/"
+x,:!/2#,`$nums,syms
+
+/ Replace defns until stops changing
+a:(,/'x@)/x
+
+/ Find root defn
+/ (Hack: Solve the output in Excel as ngn/k has some limit on eval (.))
+` 0: ,/$a`root
+
+/ Output spacer
+` 0: ""
+
+/ Part 2
+
+/ Override 'humn' defn in input so that it maps to itself
+x,:!/2#,`humn`"="
+
+/ Replace op of root with = for ease of splitting the output
+x,:`root!,@[x`root;2;:;`"="]
+
+/ Manually found the side that didn't have 'humn'
+/ and calculated it in Excel (call it v),
+/ then copied the other side into an Excel spreadsheet,
+/ set name of a cell to 'humn' with dummy value 1,
+/ and goal seeked for v by changing cell humn.
+a:(,/'x@)/x
+` 0: ,/$a`root
+
 \\
