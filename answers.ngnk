@@ -115,7 +115,7 @@ x:{$[1=#x;x;(`"("),x,`")"]}'`$" "\'x
 
 / Map nums, operations and brackets to themselves
 nums:$(^:)_`I$'statement
-syms:$"()+-*/"
+syms:$"()+-*/="
 x,:!/2#,`$nums,syms
 
 / Replace defns until stops changing
@@ -131,7 +131,7 @@ a:(,/'x@)/x
 / Part 2
 
 / Override 'humn' defn in input so that it maps to itself
-x,:!/2#,`humn`"="
+x[`humn]:`humn
 
 / Replace op of root with = for ease of splitting the output
 x,:`root!,@[x`root;2;:;`"="]
