@@ -107,14 +107,14 @@ input:0:"21.txt"
 / Build a dict of names to statements
 x:input?'":"
 names:`$x#'input
-statement:(2+x)_'input
-x:names!statement
+statements:(2+x)_'input
+x:names!statements
 
 / Wrap compound statements in brackets
 x:{$[1=#x;x;(`"("),x,`")"]}'`$" "\'x
 
 / Map nums, operations and brackets to themselves
-nums:$(^:)_`I$'statement
+nums:$(^:)_`I$'statements
 syms:$"()+-*/="
 x,:!/2#,`$nums,syms
 
