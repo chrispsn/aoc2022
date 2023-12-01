@@ -98,6 +98,22 @@ rr:(4-!4)r/'  / reverse rotates
 |//*/rr@{1+(-2+#x)^((*x)>+x)?'0}''(!#input)_\:/:r\input
 
 
+/ Day 18
+
+input:0:"18.txt"
+x:(25 25 25#0).[;;:;1]/.'input
+
+/ part 1
++//(0<':x
+    0<':'x
+    0<':''x
+    0<':|x
+    0<':'|x
+    0<':''|x)
+
+/ TODO part 2
+
+
 / Day 21
 
 input:0:"21.txt"
